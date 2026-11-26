@@ -9,7 +9,8 @@ interface CategoryFilterProps {
 // Fila horizontal de categorías. Volver a tocar la activa la desactiva (muestra todas).
 export default function CategoryFilter({ active, onSelect }: CategoryFilterProps) {
   return (
-    <ul className="flex gap-6 overflow-x-auto border-b border-gray-200 px-4 md:px-8">
+    <div className="border-b border-gray-200">
+      <ul className="mx-auto flex max-w-7xl gap-6 overflow-x-auto px-4 md:justify-center md:px-8">
       {CATEGORIES.map(({ label, icon }) => {
         const isActive = label === active;
         return (
@@ -29,5 +30,6 @@ export default function CategoryFilter({ active, onSelect }: CategoryFilterProps
         );
       })}
     </ul>
+    </div>
   );
 }
